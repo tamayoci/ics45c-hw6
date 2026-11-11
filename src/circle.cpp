@@ -7,3 +7,7 @@ Circle::Circle(Point center, std::string name, int radius)
 {
 }
 
+double Circle::area() const {
+    return std::numbers::pi * radius * radius;
+}
+
