@@ -34,6 +34,7 @@ Picture& Picture::operator=(const Picture& other) {
         swap(temp);
     }
     return *this;
+}
 
 Picture& Picture::operator=(Picture&& other) {
     if (this != &other) {
