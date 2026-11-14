@@ -23,3 +23,15 @@ Picture::Picture(Picture&& other)
     other.tail = nullptr;
 }
 
+void Picture::swap(Picture& other) {
+    std::swap(head, other.head);
+    std::swap(tail, other.tail);
+}
+
+Picture& Picture::operator=(const Picture& other) {
+    if (this != &other) {
+        Picture temp(other);
+        swap(temp);
+    }
+    return *this;
+
