@@ -35,3 +35,21 @@ Picture& Picture::operator=(const Picture& other) {
     }
     return *this;
 
+Picture& Picture::operator=(Picture&& other) {
+    if (this != &other) {
+        swap(other);
+    }
+    return *this;
+}
+
+void Picture::add(const Shape& shape) {
+    ListNode* node = new ListNode{shape.clone(), nullptr};
+
+    if (head == nullptr) {
+        head = node;
+        tail = node;
+    } else {
+        tail->next = node;
+        tail = node;
+    }
+}
