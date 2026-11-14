@@ -10,7 +10,7 @@ void Shape::print(std::ostream& out) const {
     out << name
         << " at ("
         << center.x
-        << ","
+        << ", "
         << center.y
         << ") area = "
         << area()
