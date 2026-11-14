@@ -53,3 +53,24 @@ void Picture::add(const Shape& shape) {
         tail = node;
     }
 }
+
+double Picture::total_area() const {
+    double total = 0;
+
+    for (ListNode* p = head; p != nullptr; p = p->next) {
+        total += p->shape->area();
+    }
+
+    return total;
+}
+
+Picture::~Picture() {
+    while (head != nullptr) {
+        ListNode* temp = head;
+
+        head = head->next;
+
+        delete temp->shape;
+        delete temp;
+    }
+}
