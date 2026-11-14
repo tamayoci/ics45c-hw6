@@ -7,3 +7,19 @@ using namespace std;
 Picture::Picture()
     : head(nullptr), tail(nullptr) {
 }
+
+Picture::Picture(const Picture& other)
+    : head(nullptr), tail(nullptr) {
+
+    for (ListNode* p = other.head; p != nullptr; p = p->next) {
+        add(*p->shape);
+    }
+}
+
+Picture::Picture(Picture&& other)
+    : head(other.head), tail(other.tail) {
+
+    other.head = nullptr;
+    other.tail = nullptr;
+}
+
